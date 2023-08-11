@@ -3,7 +3,43 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayDayIdentityProject.EntityLayer", "PayDayIdentityProject.EntityLayer\PayDayIdentityProject.EntityLayer.csproj", "{70B5065D-A670-4D6F-B81A-888DBE732A31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayDayIdentityProject.DataAccessLayer", "PayDayIdentityProject.DataAccessLayer\PayDayIdentityProject.DataAccessLayer.csproj", "{CA9B5CE7-A813-43EF-ACA9-DC4086CB81D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayDayIdentityProject.BusinessLayer", "PayDayIdentityProject.BusinessLayer\PayDayIdentityProject.BusinessLayer.csproj", "{C5AAAA54-77E5-44C6-B260-9FE46ECA1C33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayDayIdentityProject.DtoLayer", "PayDayIdentityProject.DtoLayer\PayDayIdentityProject.DtoLayer.csproj", "{8A233A53-AE29-40DE-A5C1-5D677C1911E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayDayIdentityProject.PresentationLayer", "PayDayIdentityProject.PresentationLayer\PayDayIdentityProject.PresentationLayer.csproj", "{DF92FAA8-E79E-4028-8999-3722333C63C1}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70B5065D-A670-4D6F-B81A-888DBE732A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B5065D-A670-4D6F-B81A-888DBE732A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B5065D-A670-4D6F-B81A-888DBE732A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B5065D-A670-4D6F-B81A-888DBE732A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9B5CE7-A813-43EF-ACA9-DC4086CB81D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9B5CE7-A813-43EF-ACA9-DC4086CB81D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9B5CE7-A813-43EF-ACA9-DC4086CB81D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9B5CE7-A813-43EF-ACA9-DC4086CB81D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5AAAA54-77E5-44C6-B260-9FE46ECA1C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5AAAA54-77E5-44C6-B260-9FE46ECA1C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5AAAA54-77E5-44C6-B260-9FE46ECA1C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5AAAA54-77E5-44C6-B260-9FE46ECA1C33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A233A53-AE29-40DE-A5C1-5D677C1911E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A233A53-AE29-40DE-A5C1-5D677C1911E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A233A53-AE29-40DE-A5C1-5D677C1911E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A233A53-AE29-40DE-A5C1-5D677C1911E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF92FAA8-E79E-4028-8999-3722333C63C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF92FAA8-E79E-4028-8999-3722333C63C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF92FAA8-E79E-4028-8999-3722333C63C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF92FAA8-E79E-4028-8999-3722333C63C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
