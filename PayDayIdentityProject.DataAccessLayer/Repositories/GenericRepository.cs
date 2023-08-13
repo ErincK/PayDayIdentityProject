@@ -17,7 +17,7 @@ namespace PayDayIdentityProject.DataAccessLayer.Repositories
             context.SaveChanges();
         }
 
-        public T GetById(int id)
+        public T GetByID(int id)
         {
             using var context = new Context();
             return context.Set<T>().Find(id);

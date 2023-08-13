@@ -11,7 +11,7 @@ namespace PayDayIdentityProject.DataAccessLayer.Abstract
         void Insert(T t);
         void Delete(T t);
         void Update(T t);
-        T GetById(int id);
+        T GetByID(int id);
         List<T> GetList();
     }
 }

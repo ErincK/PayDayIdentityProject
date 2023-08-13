@@ -1,4 +1,5 @@
-﻿using PayDayIdentityProject.EntityLayer.Concrete;
+﻿
+using PayDayIdentityProject.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PayDayIdentityProject.DataAccessLayer.Abstract
 {
-    public interface ICustomerAccountDal:IGenericDal<CustomerAccountProcess>
+    public interface ICustomerAccountDal : IGenericDal<CustomerAccount>
     {
     }
 }
