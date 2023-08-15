@@ -63,7 +63,7 @@ namespace PayDayIdentityProject.PresentationLayer.Controllers
                     client.Send(mimeMessage);
                     client.Disconnect(true);
 
-
+                    TempData["Mail"] = appUserRegisterDto.Email;
 
 
 
