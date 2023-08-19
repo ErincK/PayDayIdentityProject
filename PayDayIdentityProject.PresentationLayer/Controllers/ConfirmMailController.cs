@@ -32,7 +32,7 @@ namespace PayDayIdentityProject.PresentationLayer.Controllers
 			{
 				user.EmailConfirmed = true;  // We need to set the new state of Email.
 				await _userManager.UpdateAsync(user); // We need to Update the new state of "EmailConfirmed".
-                return RedirectToAction("Index","MyProfile");
+                return RedirectToAction("Index","Login");
 			}
             return View();
 		}
