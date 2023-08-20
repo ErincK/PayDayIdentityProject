@@ -32,21 +32,21 @@ namespace PayDayIdentityProject.PresentationLayer.Controllers
             var receiverAccountNumberID = contex.CustomerAccounts.Where
                 (x => x.CustomerAccountNumber == sendMoneyForCustomerAccountProcessDto.ReceiverAccountNumber).Select
                 (y => y.CustomerAccountID).FirstOrDefault();
-            //sendMoneyForCustomerAccountProcessDto.SenderID = user.Id;
-            //sendMoneyForCustomerAccountProcessDto.ProcessDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            //sendMoneyForCustomerAccountProcessDto.ProcessType = "Havale";
-            //sendMoneyForCustomerAccountProcessDto.ReceiverID = receiverAccountNumberID;
+
+            var senderAccountNumberID = contex.CustomerAccounts.Where(x => x.AppUserID == user.Id)
+                .Where(y => y.CustomerAccountCurrency == "Türk Lirası")
+                .Select(z => z.CustomerAccountID).FirstOrDefault();
 
             var values = new CustomerAccountProcess();
             values.ProcessDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            values.SenderID = 7;
+            values.SenderID = senderAccountNumberID;
             values.ProcessType = "Havale";
             values.ReceiverID = receiverAccountNumberID;
             values.Amount = sendMoneyForCustomerAccountProcessDto.Amount;
 
             _customerAccountProcessService.TInsert(values);
 
-            return RedirectToAction("Index","Deneme");
+            return RedirectToAction("Index", "Deneme");
         }
     }
 }
