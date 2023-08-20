@@ -12,9 +12,10 @@ namespace PayDayIdentityProject.PresentationLayer.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly ICustomerAccountProcessService _customerAccountProcessService;
 
-        public SendMoneyController(UserManager<AppUser> userManager)
+        public SendMoneyController(UserManager<AppUser> userManager, ICustomerAccountProcessService customerAccountProcessService)
         {
             _userManager = userManager;
+            _customerAccountProcessService = customerAccountProcessService;
         }
 
         [HttpGet]
@@ -31,10 +32,19 @@ namespace PayDayIdentityProject.PresentationLayer.Controllers
             var receiverAccountNumberID = contex.CustomerAccounts.Where
                 (x => x.CustomerAccountNumber == sendMoneyForCustomerAccountProcessDto.ReceiverAccountNumber).Select
                 (y => y.CustomerAccountID).FirstOrDefault();
-            sendMoneyForCustomerAccountProcessDto.SenderID = user.Id;
-            sendMoneyForCustomerAccountProcessDto.ProcessDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            sendMoneyForCustomerAccountProcessDto.ProcessType = "Havale";
-            sendMoneyForCustomerAccountProcessDto.ReceiverID = receiverAccountNumberID;
+            //sendMoneyForCustomerAccountProcessDto.SenderID = user.Id;
+            //sendMoneyForCustomerAccountProcessDto.ProcessDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            //sendMoneyForCustomerAccountProcessDto.ProcessType = "Havale";
+            //sendMoneyForCustomerAccountProcessDto.ReceiverID = receiverAccountNumberID;
+
+            var values = new CustomerAccountProcess();
+            values.ProcessDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            values.SenderID = 7;
+            values.ProcessType = "Havale";
+            values.ReceiverID = receiverAccountNumberID;
+            values.Amount = sendMoneyForCustomerAccountProcessDto.Amount;
+
+            _customerAccountProcessService.TInsert(values);
 
             return RedirectToAction("Index","Deneme");
         }
