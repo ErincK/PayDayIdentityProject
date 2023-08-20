@@ -30,6 +30,7 @@ namespace PayDayIdentityProject.PresentationLayer.Controllers
         {
             var contex = new Context();
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
             var receiverAccountNumberID = contex.CustomerAccounts.Where
                 (x => x.CustomerAccountNumber == sendMoneyForCustomerAccountProcessDto.ReceiverAccountNumber).Select
                 (y => y.CustomerAccountID).FirstOrDefault();
