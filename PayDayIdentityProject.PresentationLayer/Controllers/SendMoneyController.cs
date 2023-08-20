@@ -19,8 +19,9 @@ namespace PayDayIdentityProject.PresentationLayer.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string mycurrency)
         {
+            ViewBag.currency = mycurrency;
             return View();
         }
 
@@ -43,6 +44,7 @@ namespace PayDayIdentityProject.PresentationLayer.Controllers
             values.ProcessType = "Havale";
             values.ReceiverID = receiverAccountNumberID;
             values.Amount = sendMoneyForCustomerAccountProcessDto.Amount;
+            values.Description = sendMoneyForCustomerAccountProcessDto.Description;
 
             _customerAccountProcessService.TInsert(values);
 
